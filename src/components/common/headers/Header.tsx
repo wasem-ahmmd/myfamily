@@ -34,7 +34,7 @@ const Header: React.FC = () => {
                 <h1 className="w-28 font-600 font-Georgia md:block hidden dark:!hidden dark:text-white">
                   My Family
                 </h1>
-                <h1 className="hidden font-500 font-Georgia max-md:block w-20 dark:!hidden">
+                <h1 className="hidden font-600 font-Georgia max-md:block w-28  px-2 dark:!hidden">
                   My Family
                 </h1>
               </Link>
