@@ -29,6 +29,7 @@ export const LoginUi = () => {
 
   return (
     <AuthCard
+      padingtop="pt-1"
       headerLabel=" Sign in to your account "
       headerPara="If you haven’t signed up yet."
       footerDivder="Or continue with"
@@ -37,8 +38,10 @@ export const LoginUi = () => {
       showSocial
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(()=>{})} 
-        className="space-y-7 text-sm text-black font-500 font-sans dark:text-white">
+        <form
+          onSubmit={form.handleSubmit(() => {})}
+          className="space-y-7 text-sm text-black font-500 font-sans dark:text-white"
+        >
           <div className="">
             <FormField
               control={form.control}
@@ -97,7 +100,9 @@ export const LoginUi = () => {
             </div>
           </div>
           <div className="">
-            <Button variant={"submit"} size={"submit"} type="submit">sign in</Button>
+            <Button variant={"submit"} size={"submit"} type="submit">
+              sign in
+            </Button>
           </div>
         </form>
       </Form>
