@@ -18,7 +18,7 @@ import Link from "next/link";
 const Header: React.FC = () => {
   return (
     <header className="z-[100] h-[--m-top] fixed top-0 left-0 w-full flex items-center  bg-white/80 sky-50 backdrop-blur-xl border-b border-slate-200 dark:bg-dark2 dark:border-slate-800">
-      <div className="flex items-center  w-full xl:px-6 px-2 py-3 max-lg:gap-10">
+      <div className="flex items-center  w-full xl:px-6 px-2 py-3 m-auto max-lg:gap-10">
         <div className="xxl:w-[--w-side] lg:w-[--w-side-sm]">
           <div className="flex items-center gap-1">
             {/* <Button
