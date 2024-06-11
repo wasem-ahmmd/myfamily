@@ -41,8 +41,8 @@ const Header: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex-1 relative">
-          <div className="max-w-[1220px] mx-auto flex items-center justify-center">
+        <div className="flex-1 relative ">
+          <div className="max-w-[1220px] mx-auto flex items-center justify-between">
             <div className="xl:w-[600px] sm:w-96 sm:relative rounded-xl overflow-hidden z-20 bg-BG-1 max-md:hidden w-screen left-0 max-sm:fixed max-sm:top-2 dark:!bg-white/5">
               <IoSearchOutline className="absolute left-4 top-1/2 -translate-y-1/2" />
               <input
