@@ -6,7 +6,7 @@ import { AiOutlineDown } from "react-icons/ai";
 
 const Comment: React.FC = () => {
   return (
-    <div className="sm:p-4 p-2.5 border-t border-gray-100 font-400 font-Montserrat space-y-3 relative">
+    <div className="sm:p-4 p-2.5 border-t border-black/20 font-400 font-sans space-y-3 relative">
       <div className="flex items-start gap-3 relative">
         <Link href={"/"}>
           <Avatar className="">

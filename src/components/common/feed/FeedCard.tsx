@@ -12,18 +12,18 @@ import Image from "next/image";
 import Comment from "./Comment";
 
 interface feedProps {
-  childern: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const FeedCard = ({
-  childern
+  children
 }: feedProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg text-sm font-500 font-sans border1">
+    <div className="bg-white rounded-xl shadow-lg text-sm font-500 font-sans border ">
       <div className="flex gap-3 sm:p-4 p-2.5 text-sm font-500">
         <Link href={"/"}>
           <Avatar className="border border-blue-600">
-            <AvatarImage src=""/>
+            <AvatarImage src="https://github.com/shadcn.png"/>
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </Link>
@@ -39,20 +39,8 @@ const FeedCard = ({
           </Button>
         </div>
       </div>
-      <div className="image-warrper ">
-        <Link href={"/"}>
-          <div className="relative w-full lg:h-96 h-full sm:px-4">
-            <Image
-              src={"/images/img-2.jpg"}
-              width={750}
-              height={500}
-              alt="post-img"
-              className="sm:rounded-lg w-full h-full object-cover"
-            />
-          </div>
-        </Link>
-      </div>
-      <div className="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-600 font-Montserrat">
+      {children}
+      <div className="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-600 font-sans">
         <div className="">
           <div className="flex items-center gap-2.5 rounded-full">
             <Button
