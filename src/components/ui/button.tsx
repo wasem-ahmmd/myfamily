@@ -20,7 +20,8 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         social: "text-white rounded-md",
-        submit: "text-white rounded-md w-full gap-1 bg-submit"
+        submit: "text-white rounded-md w-full gap-1 bg-submit",
+        follow: "rounded-md gap-1 bg-BG-4"
       },
       size: {
         default: " px-4 py-2",
@@ -28,7 +29,7 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
         social: "py-1.5 px-3",
-        submit: "py-1.5 px-4 text-xs"
+        submit: "py-1.5 px-4 text-xs",
       },
     },
     defaultVariants: {

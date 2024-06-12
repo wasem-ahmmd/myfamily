@@ -1,6 +1,7 @@
 import FeedUI from "@/components/common/feed/FeedUI";
 import Header from "@/components/common/headers/Header";
 import MainSideBar from "@/components/common/sidebars/MainSideBar";
+import PeopleKnow from "@/components/common/widget/PeopleKnow";
 
 export default function feed() {
     return (
@@ -14,7 +15,11 @@ export default function feed() {
                 <FeedUI />
               </div>
             </div>
-            <div className="flex-1">waseem</div>
+            <div className="flex-1">
+              <div className="lg:space-y-4 lg:pb-8 max-lg:grid sm:grid-cols-2 max-lg:gap-6 uk-sticky uk-active uk-sticky-fixed">
+                <PeopleKnow />
+              </div>
+            </div>
             </div>
         </main>
       </>
