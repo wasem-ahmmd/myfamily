@@ -15,15 +15,13 @@ interface feedProps {
   children: React.ReactNode;
 }
 
-const FeedCard = ({
-  children
-}: feedProps) => {
+const FeedCard = ({ children }: feedProps) => {
   return (
     <div className="bg-white rounded-xl shadow-lg text-sm font-500 font-sans border ">
       <div className="flex gap-3 sm:p-4 p-2.5 text-sm font-500">
         <Link href={"/"}>
           <Avatar className="border border-blue-600">
-            <AvatarImage src="https://github.com/shadcn.png"/>
+            <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </Link>
@@ -33,46 +31,50 @@ const FeedCard = ({
           </Link>
           <div className="text-xs text-gray-500 "> 2 hours ago</div>
         </div>
-        <div className="  items-center">
-          <Button className={buttonVariants({ className: "rounded-full" })}>
+        <div className="items-center">
+          <Button className={buttonVariants({ className: "hover:bg-BG-4 rounded-full px-2" })}>
             <BsThreeDots className="text-xl" />
           </Button>
         </div>
       </div>
       {children}
-      <div className="sm:p-4 p-2.5 flex items-center gap-4 text-xs font-600 font-sans">
-        <div className="">
+      <div className="sm:p-4 p-2.5 flex items-center  justify-between gap-4 text-xs font-600 font-sans">
+        <div className="flex items-center gap-3 ">
           <div className="flex items-center gap-2.5 rounded-full">
             <Button
               className={buttonVariants({
-                className: "text-red-500 bg-red-100 rounded-full ",
+                className: "text-red-500 bg-red-100 px-2 items-center  rounded-full ",
               })}
             >
-              <BsHeartFill className="text-xl  text-red-700" />
+              <BsHeartFill className="text-lg  text-red-700" />
             </Button>
             <Link href={"/"}>1,300</Link>
           </div>
-        </div>
         <div className="flex items-center gap-3">
           <Button
             className={buttonVariants({
-              className: " bg-slate-200/70  rounded-full ",
+              className: " bg-slate-200/70 px-2  rounded-full ",
             })}
           >
-            <BiSolidMessageRoundedDetail className="text-xl" />
+            <BiSolidMessageRoundedDetail className="text-lg" />
           </Button>
           <span>260</span>
         </div>
-        <Button
-          className={buttonVariants({
-            className: "ml-auto",
-          })}
-        >
-          <PiPaperPlaneTilt className="text-xl" />
-        </Button>
-        <Button className={buttonVariants({})}>
-          <FiShare2 className="text-xl" />
-        </Button>
+        </div>
+        <div className="flex items-center">
+          <Button
+            className={buttonVariants({
+              className: "ml-auto hover:bg-BG-4 rounded-full px-2",
+            })}
+          >
+            <PiPaperPlaneTilt className="text-xl" />
+          </Button>
+          <Button className={buttonVariants({
+            className: " hover:bg-BG-4 rounded-full px-2"
+          })}>
+            <FiShare2 className="text-xl" />
+          </Button>
+        </div>
       </div>
       <Comment />
     </div>

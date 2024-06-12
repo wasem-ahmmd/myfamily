@@ -70,7 +70,7 @@ const Comment: React.FC = () => {
         <Button
           className={buttonVariants({
             className:
-              "text-sm rounded-full py-1.5 px-3.5 bg-color-1",
+              "text-sm rounded-full bg-BG-4 py-1.5 px-3.5",
           })}
         >
           Replay

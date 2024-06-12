@@ -23,7 +23,7 @@ const buttonVariants = cva(
         submit: "text-white rounded-md w-full gap-1 bg-submit"
       },
       size: {
-        default: "h-9 px-4 py-2",
+        default: " px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
         icon: "h-9 w-9",
