@@ -1,5 +1,5 @@
 import React from "react";
-import FeedCard from "./FeedCard";
+import FeedCard from "@/components/common/cards/FeedCard";
 import Link from "next/link";
 import Image from "next/image";
 
