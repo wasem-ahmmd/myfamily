@@ -6,7 +6,7 @@ import Image from "next/image";
 const FeedUI: React.FC = () => {
   return (
     <>
-      <FeedCard>
+      <FeedCard showComment>
         <div className="image-warrper ">
           <Link href={"/"}>
             <div className="relative w-full lg:h-96 h-full sm:px-4">
@@ -21,7 +21,7 @@ const FeedUI: React.FC = () => {
           </Link>
         </div>
       </FeedCard>
-      <FeedCard>
+      <FeedCard showComment>
         <div className="sm:px-4 p-2.5 pt-0">
           <p className="font-400 font-sans">
             Photography is the art of capturing light with a camera. It can be

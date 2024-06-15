@@ -7,17 +7,16 @@ import { BsThreeDots, BsHeartFill } from "react-icons/bs";
 import { BiSolidMessageRoundedDetail } from "react-icons/bi";
 import { PiPaperPlaneTilt } from "react-icons/pi";
 import { FiShare2 } from "react-icons/fi";
-
-import Image from "next/image";
-import Comment from "./Comment";
+import Comment from "@/components/common/feed/Comment";
 
 interface feedProps {
   children: React.ReactNode;
+  showComment?: boolean;
 }
 
-const FeedCard = ({ children }: feedProps) => {
+const FeedCard = ({ children, showComment }: feedProps) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg text-sm font-500 font-sans border ">
+    <div className="bg-white rounded-xl shadow-lg text-sm font-500 font-sans border mb-3 ">
       <div className="flex gap-3 sm:p-4 p-2.5 text-sm font-500">
         <Link href={"/"}>
           <Avatar className="border border-blue-600">
@@ -76,7 +75,9 @@ const FeedCard = ({ children }: feedProps) => {
           </Button>
         </div>
       </div>
-      <Comment />
+      {
+        showComment && <Comment />
+      }
     </div>
   );
 };

@@ -1,6 +1,11 @@
 import React from "react";
 import { AiTwotoneHome } from "react-icons/ai";
 import {MdFamilyRestroom } from "react-icons/md";
+import { CgFeed } from "react-icons/cg";
+import { SiTorbrowser } from "react-icons/si";
+import { GiFamilyTree } from "react-icons/gi";
+
+import { HiOutlineHomeModern } from "react-icons/hi2";
 
 
 
@@ -26,9 +31,28 @@ export const sideBarlink: sidebar[] = [
       {
         title: "Family",
         icons: <MdFamilyRestroom />,
-        link: "/family/feed",
+        link: "/family",
       },
 ]
+
+
+export const familySideBarlink: sidebar[] = [
+  {
+    title: "Feed",
+    icons: <CgFeed />,
+    link: "/family/",
+  },
+  {
+    title: "Browser",
+    icons: <SiTorbrowser />,
+    link: "/family/browser",
+  },
+  {
+    title: "My Family",
+    icons: <GiFamilyTree />,
+    link: "/family/joins",
+  },
+];
 
 export const fotterLink: fotterlink[] =[
   {

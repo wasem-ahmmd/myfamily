@@ -1,23 +1,20 @@
 import React from "react";
 import Link from "next/link";
-import { fotterLink, sideBarlink } from "@/data/Static";
+import { fotterLink} from "@/data/Static";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GrSettingsOption } from "react-icons/gr";
 
-const MainSideBar: React.FC = () => {
+interface sidebarProps{
+  children: React.ReactNode
+}
+
+const MainSideBar = ({children}: sidebarProps) => {
   return (
-    <div className="fixed top-0 left-0 z-[99] pt-20 border-r overflow-hidden hover:overflow-y-scroll  transition-transform xl:duration-500 max-xl:w-[50%] max-xl:-translate-x-full">
-      <div className=" max-xl:bg-white  shadow-sm xxl:w-100 sm:w-56 w-[100%] h-[calc(100vh-64px)] relative z-30 max-lg:border-r dark:max-xl:!bg-slate-700 dark:border-slate-700">
+    <div className="fixed top-0 left-0  z-[99] pt-20 border-r overflow-hidden hover:overflow-y-scroll  transition-transform xl:duration-500 max-xl:w-[50%] max-xl:-translate-x-full">
+      <div className=" max-xl:bg-white  shadow-sm xxl:w-100 sm:w-[232px] w-[100%] h-[calc(100vh-64px)] relative z-30 max-lg:border-r dark:max-xl:!bg-slate-700 dark:border-slate-700">
         <div className="px-2 ">
           <div className="menu-pagelink border-b mb-3">
-            {sideBarlink?.map((item, index) => (
-              <Link href={item.link} key={item.title}>
-                <div className="flex items-center gap-4 px-4 py-2 rounded-xl w-auto hover:bg-BG-4 mb-1 cursor-pointer">
-                  <div className="text-xl leading-loose">{item?.icons}</div>
-                  <h1 className="font-sans font-600">{item?.title}</h1>
-                </div>
-              </Link>
-            ))}
+            {children}
           </div>
           <div className="menu-userlinks border-b mb-6">
             <div className="menu-heading font-sans font-500 px-2 mb-4">
