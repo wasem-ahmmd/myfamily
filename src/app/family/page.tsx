@@ -1,4 +1,4 @@
-import FeedCard from "@/components/common/cards/FeedCard";
+
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function FamilyHome() {
   return (
     <div className="xxl:max-w-[1220px] max-w-[576px] mx-auto">
-      <FeedCard>
+      {/* <FeedCard>
         <div className="image-warrper ">
           <Link href={"/"}>  
             <div className="relative w-full lg:h-96 h-full sm:px-4">
@@ -61,7 +61,7 @@ export default function FamilyHome() {
             also be a hobby, a profession, or a passion. 📷
           </p>
         </div>
-      </FeedCard>
+      </FeedCard> */}
     </div>
   );
 }
