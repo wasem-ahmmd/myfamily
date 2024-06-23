@@ -16,8 +16,10 @@ import AuthCard from "@/components/common/auth/AuthCard";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export const LoginUi = () => {
+  const route = useRouter()
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
     defaultValues: {
@@ -30,12 +32,7 @@ export const LoginUi = () => {
   return (
     <AuthCard
       padingtop="pt-1"
-      headerLabel=" Sign in to your account "
-      headerPara="If you haven’t signed up yet."
-      footerDivder="Or continue with"
-      buttonHref="/signup"
-      buttonLabel="Register here!"
-      showSocial
+      headerLabel="Admin Account"
     >
       <Form {...form}>
         <form
@@ -76,7 +73,7 @@ export const LoginUi = () => {
               />
             </div>
             <div className="flex items-center mt-7 justify-between">
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="checkbox"
                 render={({ field }) => (
@@ -90,17 +87,17 @@ export const LoginUi = () => {
                     <FormMessage />
                   </div>
                 )}
-              />
+              /> */}
               <Link
                 href={""}
-                className="text-blue-700 font-sans items-center font-600"
+                className="text-blue-700 font-sans items-center font-600 hover:underline"
               >
                 Forgot password{" "}
               </Link>
             </div>
           </div>
           <div className="">
-            <Button variant={"submit"} size={"submit"} type="submit">
+            <Button variant={"submit"} size={"submit"} type="submit" onClick={()=> route.push('/dashboard') }>
               sign in
             </Button>
           </div>

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { FC } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 import {
-  IoReorderThreeOutline,
   IoSearchOutline,
   IoAddOutline,
+  IoReorderThreeOutline,
 } from "react-icons/io5";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -12,30 +13,25 @@ import {
   IoMdNotificationsOutline,
 } from "react-icons/io";
 import { RiMessage2Fill, RiMessage2Line } from "react-icons/ri";
-import { RxCross2 } from "react-icons/rx";
-import Link from "next/link";
+import MainSideBar from "../sidebars/MainSideBar";
 
-const Header: React.FC = () => {
+type Props = {
+  children?: React.ReactNode
+}
+const Header:FC<Props> = ({children}) => {
   return (
     <header className="z-[100] h-[--m-top] fixed top-0 left-0 w-full flex items-center  bg-white/80 sky-50 backdrop-blur-xl border-b border-slate-200 dark:bg-dark2 dark:border-slate-800">
       <div className="flex items-center  w-full xl:px-6 px-2 py-3 m-auto max-lg:gap-10">
         <div className="xxl:w-[--w-side] lg:w-[--w-side-sm]">
           <div className="flex items-center gap-1">
-            {/* <Button
-              className={buttonVariants({
-                variant: "ghost",
-                size:"icon",
-                className:
-                  "w-8 h-8 rounded-full hover:bg-gray-100  dark:hover:bg-slate-600",
-              })}
-            ><IoReorderThreeOutline className="text-2xl z-50"/> <RxCross2 /></Button> */}
+            {children}
             <div className="logo">
               <Link href={"/"}>
                 <h1 className="w-28 font-600 font-Georgia md:block hidden dark:!hidden dark:text-white">
-                  My Family
+                  Call Me
                 </h1>
                 <h1 className="hidden font-600 font-Georgia max-md:block w-28  px-2 dark:!hidden">
-                  My Family
+                  Call Me
                 </h1>
               </Link>
             </div>

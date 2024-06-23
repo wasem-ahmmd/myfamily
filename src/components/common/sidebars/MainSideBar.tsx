@@ -12,11 +12,11 @@ const MainSideBar = ({children}: sidebarProps) => {
   return (
     <div className="fixed top-0 left-0  z-[99] pt-20 border-r overflow-hidden hover:overflow-y-scroll  transition-transform xl:duration-500 max-xl:w-[50%] max-xl:-translate-x-full">
       <div className=" max-xl:bg-white  shadow-sm xxl:w-100 sm:w-[232px] w-[100%] h-[calc(100vh-64px)] relative z-30 max-lg:border-r dark:max-xl:!bg-slate-700 dark:border-slate-700">
-        <div className="px-2 ">
+        <div className="px-2">
           <div className="menu-pagelink border-b mb-3">
             {children}
           </div>
-          <div className="menu-userlinks border-b mb-6">
+          {/* <div className="menu-userlinks border-b mb-6">
             <div className="menu-heading font-sans font-500 px-2 mb-4">
               User Page
             </div>
@@ -36,8 +36,8 @@ const MainSideBar = ({children}: sidebarProps) => {
                 <GrSettingsOption className="text-xl" />
                 <h1 className="font-sans font-600">Setting</h1>
               </div>
-          </div>
-          <footer className="footer text-xs font-500 font-sans flex flex-wrap gap-2 gap-y-[8px] p-2 mt-2">
+          </div> */}
+          {/* <footer className="footer text-xs font-500 font-sans flex flex-wrap gap-2 gap-y-[8px] p-2 mt-2">
             {
               fotterLink?.map((item,index)=>(
                 <Link href={item.link} key={item.title} className="hover:underline">
@@ -45,7 +45,7 @@ const MainSideBar = ({children}: sidebarProps) => {
               </Link>
               ))
             }
-          </footer>
+          </footer> */}
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ export default function RootLayout({
         <Link
           href={"/family/create"}
           className={buttonVariants({
-            className: "gap-1 p-2 bg-BG-4 w-full font-600  mb-6",
+            className: "gap-1 p-2 bg-B-blue w-full font-600  mb-6",
           })}
         >
           <MdAdd /> Create Family
