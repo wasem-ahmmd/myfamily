@@ -1,5 +1,4 @@
-import CardW250 from "@/components/common/cards/CardW250";
-import Cardw528 from "@/components/common/cards/Cardw528";
+
 import Link from "next/link";
 
 export default function FamilyHome() {
@@ -24,14 +23,14 @@ export default function FamilyHome() {
 
 
       <div className="grid md:grid-cols-2 md:gap-2 gap-3">
+        {/* <Cardw528 />
         <Cardw528 />
         <Cardw528 />
         <Cardw528 />
         <Cardw528 />
         <Cardw528 />
         <Cardw528 />
-        <Cardw528 />
-        <Cardw528 />
+        <Cardw528 /> */}
       </div>
     </div>
   );
