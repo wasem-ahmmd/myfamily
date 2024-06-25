@@ -1,6 +1,7 @@
 import React from "react";
-import { AiTwotoneHome } from "react-icons/ai";
-import {MdFamilyRestroom } from "react-icons/md";
+import { IoFlag } from "react-icons/io5";
+import { GiWorld } from "react-icons/gi";
+import { MdDashboardCustomize } from "react-icons/md";
 import { FaHome, FaUserCircle  } from "react-icons/fa";
 import { GrSettingsOption } from "react-icons/gr";
 
@@ -13,10 +14,7 @@ interface sidebar {
     link: string;
 }
 
-interface fotterlink{
-  title: string;
-  link: string;
-}
+
 
 
 
@@ -40,29 +38,20 @@ export const familySideBarlink: sidebar[] = [
   }
 ];
 
-export const fotterLink: fotterlink[] =[
+export const packageSideBar: sidebar[] =[
   {
-    title: "About",
-    link: ""
+    title: "Local",
+    icons: <IoFlag />,
+    link: "",
   },
   {
-    title: "Blog",
-    link: ""
+    title: "International",
+    icons: <GiWorld />,
+    link: "",
   },
   {
-    title: "Careers",
-    link: ""
-  },
-  {
-    title: "Support",
-    link: ""
-  },
-  {
-    title: "Contact Us",
-    link: ""
-  },
-  {
-    title: "Developer",
-    link: ""
+    title: "Custom Package",
+    icons: <MdDashboardCustomize />,
+    link: "",
   },
 ]

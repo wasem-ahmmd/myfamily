@@ -13,12 +13,28 @@ import {
   IoMdNotificationsOutline,
 } from "react-icons/io";
 import { RiMessage2Fill, RiMessage2Line } from "react-icons/ri";
-import MainSideBar from "../sidebars/MainSideBar";
+
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { FaUser } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 
 type Props = {
-  children?: React.ReactNode
-}
-const Header:FC<Props> = ({children}) => {
+  children?: React.ReactNode;
+};
+const Header: FC<Props> = ({ children }) => {
   return (
     <header className="z-[100] h-[--m-top] fixed top-0 left-0 w-full flex items-center  bg-white/80 sky-50 backdrop-blur-xl border-b border-slate-200 dark:bg-dark2 dark:border-slate-800">
       <div className="flex items-center  w-full xl:px-6 px-2 py-3 m-auto max-lg:gap-10">
@@ -81,15 +97,35 @@ const Header:FC<Props> = ({children}) => {
                 <RiMessage2Fill className="w-5 h-5 max-sm:hidden" />
                 <RiMessage2Line className="sm:hidden text-2xl" />
               </Button>
-              <div className="rounded-full relative bg-secondery cursor-pointer shrink-0">
-                <Avatar className="sm:w-9 sm:h-9 w-7 h-7 rounded-full shadow shrink-0">
-                  <AvatarImage
-                    src="https://github.com/shadcn.png"
-                    alt="@shadcn"
-                  />
-                  <AvatarFallback>CN</AvatarFallback>
-                </Avatar>
-              </div>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <div className="rounded-full relative bg-secondery cursor-pointer shrink-0">
+                    <Avatar className="sm:w-9 sm:h-9 w-7 h-7 rounded-full shadow shrink-0">
+                      <AvatarImage
+                        src="https://github.com/shadcn.png"
+                        alt="@shadcn"
+                      />
+                      <AvatarFallback>CN</AvatarFallback>
+                    </Avatar>
+                  </div>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-44 mr-10 mt-4 bg-white">
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuGroup>
+                    <DropdownMenuItem className="cursor-pointer">
+                      <FaUser className="mr-2 h-4 w-4" />
+                      <span>Profile</span>
+                    </DropdownMenuItem>
+                  </DropdownMenuGroup>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="cursor-pointer">
+                    <FiLogOut className="mr-2 h-4 w-4" />
+                    <span>Log out</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
