@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { fotterLink} from "@/data/Static";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { GrSettingsOption } from "react-icons/gr";
 
