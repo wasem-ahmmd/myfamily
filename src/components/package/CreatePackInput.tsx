@@ -24,8 +24,7 @@ import {
   SelectValue,
 } from "../ui/select";
 import PackType from "../common/select/PackType";
-
-
+import AuthCard from "../common/auth/AuthCard";
 
 const CreatePackInput = () => {
   const LocalPackform = useForm<z.infer<typeof LocalPackSchema>>({
@@ -41,139 +40,135 @@ const CreatePackInput = () => {
   });
 
   return (
-    <div className="mt-3">
+    <AuthCard
+      padingtop="pt-1 xsm:w-[750px]"
+      headerLabel="Create Your Package"
+      innerwidth="lg:max-w-lg"
+    >
       <Form {...LocalPackform}>
         <form
           onSubmit={LocalPackform.handleSubmit(() => {})}
           className=" text-sm text-black font-500 font-sans dark:text-white"
         >
-          <div className="grid items-center grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xxl:grid-cols-3 3xl:grid-cols-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
+            <FormField
+              control={LocalPackform.control}
+              name="type"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="">Package Type</FormLabel>
+                  <FormControl>
+                    <PackType />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-          <div className="">
-              <FormField
-                control={LocalPackform.control}
-                name="type"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl >
-                      <PackType   />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+            <FormField
+              control={LocalPackform.control}
+              name="country"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="">Country</FormLabel>
+                  <FormControl>
+                    <CountrySelect {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
+            <FormField
+              control={LocalPackform.control}
+              name="price"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="">Prices</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="Enter Price" type="text" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-            <div className="">
-              <FormField
-                control={LocalPackform.control}
-                name="country"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <CountrySelect {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+            <FormField
+              control={LocalPackform.control}
+              name="day"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="">Days</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="Enter Day" type="text" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
-            <div className="">
-              <FormField
-                control={LocalPackform.control}
-                name="price"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input {...field} placeholder="Enter Price" type="text" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
+            <FormField
+              control={LocalPackform.control}
+              name="minute"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="">Minutes</FormLabel>
+                  <FormControl>
+                    <Input {...field} placeholder="Enter Minutes" type="text" />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
-            <div className="">
-              <FormField
-                control={LocalPackform.control}
-                name="day"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input {...field} placeholder="Enter Day" type="text" />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
+            <FormField
+              control={LocalPackform.control}
+              name="statuss"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="">Status</FormLabel>
+                  <FormControl>
+                    <Select>
+                      <SelectTrigger>Select...</SelectTrigger>
+                      <SelectContent {...field}>
+                        <SelectGroup className="bg-white cursor-pointer">
+                          <SelectValue>
+                            {field.value ? field.value : "Select a Status"}
+                          </SelectValue>
+                          <SelectItem value="active" className="cursor-pointer">
+                            Active
+                          </SelectItem>
+                          <SelectItem
+                            value="unactive"
+                            className="cursor-pointer"
+                          >
+                            UnActive
+                          </SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
 
-            <div className="">
-              <FormField
-                control={LocalPackform.control}
-                name="minute"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        placeholder="Enter Minutes"
-                        type="text"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            <div className="">
-              <FormField
-                control={LocalPackform.control}
-                name="statuss"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Select >
-                        <SelectTrigger>
-                        Select a Status
-                        </SelectTrigger>
-                        <SelectContent {...field} >
-                          <SelectGroup className="bg-white cursor-pointer">
-                          <SelectValue>{field.value ? field.value : "Select a Status"}</SelectValue>
-                            <SelectItem
-                              value="active"
-                              className="cursor-pointer"
-                            >
-                              Active
-                            </SelectItem>
-                            <SelectItem
-                              value="unactive"
-                              className="cursor-pointer"
-                            >
-                              UnActive
-                            </SelectItem>
-                          </SelectGroup>
-                        </SelectContent>
-                      </Select>
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-
-            <div className="">
-              <Button type="submit" className="bg-blue-600 w-full">
-                Add Package
-              </Button>
-            </div>
+          <div className="flex items-center justify-center mt-8">
+            <Button
+              type="submit"
+              className="bg-B-blue w-full sm:w-auto text-white font-sans"
+            >
+              Add Package
+            </Button>
           </div>
         </form>
       </Form>
-    </div>
+    </AuthCard>
   );
 };
 

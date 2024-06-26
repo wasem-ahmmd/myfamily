@@ -10,7 +10,7 @@ export default function DashHome() {
     <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-3 3xl:grid-cols-6">
       <Widget
         icon={<PiTimerFill className="h-7 w-7" />}
-        title={"My Minutes"}
+        title={"Total Minutes"}
         subtitle={"200,000"}
       />
 

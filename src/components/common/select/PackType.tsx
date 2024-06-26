@@ -19,7 +19,7 @@ const PackType = () => {
 
   return (
     <Select onValueChange={handleSelect}>
-      <SelectTrigger>{selectedOption? selectedOption : " Select a Package"}</SelectTrigger>
+      <SelectTrigger>{selectedOption? selectedOption : " Select..."}</SelectTrigger>
       <SelectContent>
         <SelectGroup className="bg-white cursor-pointer">
           <SelectItem value="local" className="cursor-pointer">

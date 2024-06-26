@@ -31,7 +31,6 @@ export const LoginUi = () => {
 
   return (
     <AuthCard
-      padingtop="pt-1"
       headerLabel="Admin Account"
     >
       <Form {...form}>
