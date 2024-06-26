@@ -1,7 +1,5 @@
 import React from "react";
-import { IoFlag } from "react-icons/io5";
-import { GiWorld } from "react-icons/gi";
-import { MdDashboardCustomize } from "react-icons/md";
+import { TbPackages } from "react-icons/tb";
 import { FaHome, FaUserCircle  } from "react-icons/fa";
 import { GrSettingsOption } from "react-icons/gr";
 
@@ -13,11 +11,6 @@ interface sidebar {
     icons: React.ReactNode;
     link: string;
 }
-
-
-
-
-
 
 
 export const familySideBarlink: sidebar[] = [
@@ -32,26 +25,13 @@ export const familySideBarlink: sidebar[] = [
     link: "",
   },
   {
+    title: "All Package",
+    icons: <TbPackages />,
+    link: "/dashboard/package",
+  },
+  {
     title: "Setting",
     icons: <GrSettingsOption />,
     link: "",
   }
 ];
-
-export const packageSideBar: sidebar[] =[
-  {
-    title: "Local",
-    icons: <IoFlag />,
-    link: "",
-  },
-  {
-    title: "International",
-    icons: <GiWorld />,
-    link: "",
-  },
-  {
-    title: "Custom Package",
-    icons: <MdDashboardCustomize />,
-    link: "",
-  },
-]

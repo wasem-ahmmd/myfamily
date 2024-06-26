@@ -1,6 +1,7 @@
 import React from "react";
 
 interface Package {
+  type:string;
   country: string;
   price: string;
   day: string;
@@ -9,6 +10,7 @@ interface Package {
 }
 const packageData: Package[] = [
   {
+    type: "Local",
     country: "India",
     price: "150 inr" ,
     day: "30 day",
@@ -16,6 +18,7 @@ const packageData: Package[] = [
     status: "active",
   },
   {
+    type: "Local",
     country: "Saudi Arabia",
     price: "6 SAR",
     day: "30 day",
@@ -23,6 +26,7 @@ const packageData: Package[] = [
     status: "active",
   },
   {
+    type: "Local",
     country: "Pakistan",
     price: "2785 Pkr",
     day: "30 day",
@@ -31,13 +35,16 @@ const packageData: Package[] = [
   }
 ];
 
-const Local = () => {
+const AllPackage = () => {
   return (
     <div className="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-3  shadow-default sm:px-7.5 xl:pb-1">
-      <div className="max-w-full overflow-x-auto">
+      <div className="max-w-full overflow-x-auto mt-7">
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-BG-1 rounded-lg text-left ">
+            <th className="min-w-[210px] px-4 py-4 font-sans font-medium text-black xl:pl-11 ">
+                Package Type
+              </th>
               <th className="min-w-[210px] px-4 py-4 font-sans font-medium text-black xl:pl-11 ">
                 Country
               </th>
@@ -61,6 +68,11 @@ const Local = () => {
           <tbody>
             {packageData.map((packageItem, key) => (
               <tr key={key}>
+                 <td className="border-b border-[#eee] px-4 py-5 pl-9  xl:pl-11">
+                  <h5 className="font-medium font-sans text-black">
+                    {packageItem.type}
+                  </h5>
+                </td>
                 <td className="border-b border-[#eee] px-4 py-5 pl-9  xl:pl-11">
                   <h5 className="font-medium font-sans text-black">
                     {packageItem.country}
@@ -154,4 +166,4 @@ const Local = () => {
   );
 };
 
-export default Local;
+export default AllPackage;
