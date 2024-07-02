@@ -22,7 +22,7 @@ export const familySideBarlink: sidebar[] = [
   {
     title: "Users",
     icons: <FaUserCircle />,
-    link: "",
+    link: "/users/",
   },
   {
     title: "All Package",
