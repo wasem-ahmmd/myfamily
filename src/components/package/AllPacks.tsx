@@ -1,10 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 interface Package {
   image: string;
   type: string;
+  users: string;
   country: string;
   price: string;
   day: string;
@@ -14,7 +16,8 @@ interface Package {
 const packageData: Package[] = [
   {
     image: "https://flagcdn.com/in.svg",
-    type: "Local",
+    type: "L",
+    users: "0",
     country: "India",
     price: "150 INR",
     day: "7 Days",
@@ -23,7 +26,8 @@ const packageData: Package[] = [
   },
   {
     image: "https://flagcdn.com/sa.svg",
-    type: "International",
+    type: "I",
+    users: "0",
     country: "Saudi Arabia",
     price: "50 SAR",
     day: "30 Days",
@@ -33,7 +37,8 @@ const packageData: Package[] = [
   {
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
-    type: "Custom",
+    type: "C",
+    users: "0",
     country: "Afghanistan",
     price: "250 AFG",
     day: "15 Days",
@@ -46,19 +51,23 @@ const AllPacks = () => {
   return (
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 h-auto overflow-y-scroll p-6 justify-center justify-items-center content-start border-2 border-gray-300">
       {packageData?.map((item, index) => (
+        <Link href={''} key={index} className="hover:scale-105 hover:transition-all" >
         <div
-          key={index}
-          className="h-full overflow-hidden text-gray-900 border-2 border-gray-700 rounded-lg shadow-lg shadow-gray-900 dark:border-slate-100 dark:text-slate-100 dark:shadow-slate-500"
+          
+          className=" relative h-full overflow-hidden text-gray-900 border-2 border-gray-700 hover:border-gray-950 rounded-lg shadow-lg shadow-gray-900"
         >
           <Image
             alt=""
             src={item.image}
             width={1600}
             height={800}
-            className="object-cover w-full h-[180px]"
+            priority
+            className="object-cover w-[270px] h-[180px]"
           />
+          <div className="w-7 h-7 flex justify-center border border-black rounded-full bg-white absolute end-2 top-2 font-sans italic items-center">
+            {item.type}
+          </div>
           <div className="p-4 space-y-1 bg-BG-1">
-
             <div className="mb-3 flex flex-1 items-center justify-between gap-2 xxs:gap-0">
               <h2 className="font-extrabold italic font-sans text-xl">
                 {item.country}
@@ -77,10 +86,10 @@ const AllPacks = () => {
             </div>
             <div className=" flex items-center gap-4">
               <h3 className="font-700 font-sans text-sm xsm:text-lg capitalize">
-                Package
+                Users
               </h3>
               {":"}
-              <span className="font-500 font-sans">{item.type}</span>
+              <span className="font-500 font-sans">{item.users}</span>
             </div>
             <div className=" flex items-center gap-4">
               <h3 className="font-700 font-sans text-sm xsm:text-lg capitalize">
@@ -105,6 +114,7 @@ const AllPacks = () => {
             </div>
           </div>
         </div>
+        </Link>
       ))}
     </div>
   );

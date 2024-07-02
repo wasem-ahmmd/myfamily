@@ -1,5 +1,5 @@
-import CreatePackInput from '@/components/package/CreatePackInput'
 import React from 'react'
+import CreatePackInput from '@/components/package/CreatePackInput'
 
 const page = () => {
   return (
