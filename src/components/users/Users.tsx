@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, buttonVariants } from "../ui/button";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
+import UserData from "./UserData";
 
 const Users = () => {
   return (
@@ -23,7 +24,7 @@ const Users = () => {
           <p className="pl-2 text-black font-sans hidden sm:block">Entries Per Page</p>
         </div>
       </div>
-      waseem
+      <UserData />
       <div className="flex justify-center items-center sm:justify-between border-t border-stroke px-8 pt-5">
         <p className="font-500 font-sans hidden sm:block">Showing 1 0f 3 pages</p>
         <div className="flex items-center gap-2">
