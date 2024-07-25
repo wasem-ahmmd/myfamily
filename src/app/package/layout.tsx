@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "My Dashbord",
 };
 
-export default function DashLayout({
+export default function PackageLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

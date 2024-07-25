@@ -11,9 +11,7 @@ export const LoginSchema = z.object({
 });
 
 export const LocalPackSchema = z.object({
-  type: z.string().trim().min(1, { message: "Type is required" }),
   
-  country: z.string().trim().min(1, { message: "Country is required" }),
 
   price: z.string().min(1, { message: "Price Is Required" }),
 
@@ -24,13 +22,17 @@ export const LocalPackSchema = z.object({
   statuss: z.string().min(1, { message: "Status Is Required" }),
 });
 
-export const SignupSchema = z.object({
-  firstname: z.string().min(1, {
-    message: "At least One Letter",
-  }),
-  lastname: z.string(),
-  email: z.string().email(),
-  password: z.string(),
-  cpassword: z.string(),
-  checkbox: z.boolean(),
-});
+export const CountrySchema = z.object({
+  country: z.string().trim().min(1, { message: "Country is required" }),
+})
+
+// export const SignupSchema = z.object({
+//   firstname: z.string().min(1, {
+//     message: "At least One Letter",
+//   }),
+//   lastname: z.string(),
+//   email: z.string().email(),
+//   password: z.string(),
+//   cpassword: z.string(),
+//   checkbox: z.boolean(),
+// });

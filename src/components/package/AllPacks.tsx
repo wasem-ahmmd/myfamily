@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "../ui/button";
 import Link from "next/link";
 
 interface Package {
   image: string;
-  type: string;
   users: string;
   country: string;
   price: string;
@@ -16,7 +14,6 @@ interface Package {
 const packageData: Package[] = [
   {
     image: "https://flagcdn.com/in.svg",
-    type: "L",
     users: "0",
     country: "India",
     price: "150 INR",
@@ -26,7 +23,6 @@ const packageData: Package[] = [
   },
   {
     image: "https://flagcdn.com/sa.svg",
-    type: "I",
     users: "0",
     country: "Saudi Arabia",
     price: "50 SAR",
@@ -37,7 +33,6 @@ const packageData: Package[] = [
   {
     image:
       "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
-    type: "C",
     users: "0",
     country: "Afghanistan",
     price: "250 AFG",
@@ -54,7 +49,7 @@ const AllPacks = () => {
         <Link href={''} key={index} className="hover:scale-105 hover:transition-all" >
         <div
           
-          className=" relative h-full overflow-hidden text-gray-900 border-2 border-gray-700 hover:border-gray-950 rounded-lg shadow-lg shadow-gray-900"
+          className="h-full overflow-hidden text-gray-900 border-2 border-gray-700 hover:border-gray-950 rounded-lg shadow-lg shadow-gray-900"
         >
           <Image
             alt=""
@@ -64,9 +59,6 @@ const AllPacks = () => {
             priority
             className="object-cover w-[270px] h-[180px]"
           />
-          <div className="w-7 h-7 flex justify-center border border-black rounded-full bg-white absolute end-2 top-2 font-sans italic items-center">
-            {item.type}
-          </div>
           <div className="p-4 space-y-1 bg-BG-1">
             <div className="mb-3 flex flex-1 items-center justify-between gap-2 xxs:gap-0">
               <h2 className="font-extrabold italic font-sans text-xl">

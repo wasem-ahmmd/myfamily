@@ -27,7 +27,7 @@ export const familySideBarlink: sidebar[] = [
   {
     title: "All Package",
     icons: <TbPackages />,
-    link: "/dashboard/package",
+    link: "/package",
   },
   {
     title: "Setting",

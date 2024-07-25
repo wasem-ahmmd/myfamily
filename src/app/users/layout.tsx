@@ -52,7 +52,7 @@ export default function Userlayout({
               ))}
               <div className="action-part mt-5">
                 <Link
-                  href={"/dashboard/package/create/"}
+                  href={"/package/create/"}
                   className={buttonVariants({
                     className:
                       "gap-2 p-2 bg-B-blue w-full font-600 font-sans text-lg mb-6 text-white",
@@ -83,7 +83,7 @@ export default function Userlayout({
       ))}
       <div className="action-part mt-5">
         <Link
-          href={"/dashboard/package/create/"}
+          href={"/package/create/"}
           className={buttonVariants({
             className:
               "gap-2 p-2 bg-B-blue w-full font-600 font-sans text-lg mb-6 text-white",
