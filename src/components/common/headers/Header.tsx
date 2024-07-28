@@ -1,3 +1,4 @@
+"use client";
 import React, { FC } from "react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
@@ -30,11 +31,24 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { FaUser } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
+import { fetchLogout } from "@/routesApi";
+import { useRouter } from "next/navigation";
 
 type Props = {
   children?: React.ReactNode;
 };
 const Header: FC<Props> = ({ children }) => {
+  const route = useRouter()
+  const Logout = async () => {
+    try {
+      await fetchLogout();
+      // Redirect to the homepage after successful logout
+      route.push('/');
+    } catch (error) {
+      console.error('Error during logout:', error);
+      // Optionally handle the error, e.g., show a notification or alert to the user
+    }
+  };
   return (
     <header className="z-[100] h-[--m-top] fixed top-0 left-0 w-full flex items-center  bg-white/80 sky-50 backdrop-blur-xl border-b border-slate-200 dark:bg-dark2 dark:border-slate-800">
       <div className="flex items-center  w-full xl:px-6 px-2 py-3 m-auto max-lg:gap-10">
@@ -122,7 +136,7 @@ const Header: FC<Props> = ({ children }) => {
                   <DropdownMenuSeparator />
                   <DropdownMenuItem className="cursor-pointer">
                     <FiLogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
+                    <span onClick={Logout}>Log out</span>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

@@ -20,7 +20,7 @@ const AuthCard = ({
   return (
     <div className="flex justify-center items-center ">
       <div className={`relative bg-white  lg:w-[580px]  w-full p-10  border  shadow-md flex items-center ${padingtop} dark:bg-slate-900 z-10`}>
-        <div className={`w-full   mx-auto space-y-10 ${innerwidth}`}>
+        <div className={`w-full   mx-auto space-y-7 ${innerwidth}`}>
           <div className="card-header">
             <h2 className="text-lg xxs:text-xl xsm:text-xxl font-600 font-sans mb-1.5 ">
               {headerLabel}

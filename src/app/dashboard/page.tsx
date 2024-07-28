@@ -5,8 +5,15 @@ import { IoDocuments } from "react-icons/io5";
 import { HiMiniUsers } from "react-icons/hi2";
 import { FiPackage } from "react-icons/fi";
 import { GrMoney } from "react-icons/gr";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default function DashHome() {
+ 
+  const token = cookies().get("accessToken")
+  if (!token) {
+    redirect('/');
+  }
   return (
     <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-3 3xl:grid-cols-6">
       <Widget

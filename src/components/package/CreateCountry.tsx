@@ -68,7 +68,7 @@ const CreateCountry = () => {
 
   return (
     <AuthCard
-      padingtop="pt-1 xsm:w-[750px] mb-3 z-50"
+      padingtop="pt-1 xsm:w-[750px] mb-3 "
       headerLabel="Create New Country"
       innerwidth="lg:max-w-lg"
     >

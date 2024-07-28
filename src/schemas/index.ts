@@ -7,7 +7,7 @@ export const LoginSchema = z.object({
   password: z.string().min(1, {
     message: "Password Is Required",
   }),
-  checkbox: z.boolean(),
+  // checkbox: z.boolean(),
 });
 
 export const LocalPackSchema = z.object({
